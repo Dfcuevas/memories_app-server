@@ -18,6 +18,10 @@ app.use(cors());
 app.use("/posts", postRoutes);
 app.use("/user", userRoutes);
 
+app.get("/", (req, res) => {
+  res.send("APP IS RUNNING");
+});
+
 // https://www.mongodb.com/cloud/atlas
 
 const PORT = process.env.PORT || 5000;
