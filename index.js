@@ -2,7 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
-import dotenv from "dotenv";
+import * as dotenv from "dotenv";
 import postRoutes from "./routes/posts.js";
 import userRoutes from "./routes/users.js";
 
@@ -20,7 +20,9 @@ app.use("/user", userRoutes);
 
 // https://www.mongodb.com/cloud/atlas
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4000;
+
+console.log(process.env);
 
 mongoose
   .connect(process.env.CONNECTION_URL, {
